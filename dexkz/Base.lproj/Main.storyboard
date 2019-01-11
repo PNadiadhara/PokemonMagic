@@ -50,6 +50,9 @@
                                             <constraint firstItem="U0s-QF-0uP" firstAttribute="centerY" secondItem="K7x-hf-xNT" secondAttribute="centerY" id="nOT-Pc-cku"/>
                                             <constraint firstItem="PqW-Zf-yqK" firstAttribute="centerX" secondItem="U0s-QF-0uP" secondAttribute="centerX" id="zk2-oo-bNM"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="pokemonImage" destination="U0s-QF-0uP" id="HFX-Ox-wvh"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
