@@ -9,63 +9,30 @@
 import UIKit
 
 class PokemonViewCell: UICollectionViewCell {
-
-   
-    @IBOutlet weak var pokemonImage: UIImageView!
   
   
-  private var pokemon = [PokemonInfo]() {
-    didSet{
-      DispatchQueue.main.async {
-        self.pokemonCollectionView.reloadData()
-      }
-    }
-  }
+  @IBOutlet weak var pokemonImage: UIImageView!
   
+  @IBOutlet weak var pokemonActivityIndicator: UIActivityIndicatorView!
   
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    pokemonCollectionView.dataSource = self
-    pokemonCollectionView.delegate = self
-    getPokemonDataFromAPI()
+  func setUpImage(pokemon: PokemonInfo) {
     
-  }
-  
-  
-  private func getPokemonDataFromAPI(){
-    PokemonAPI.searchPokemon{ (appError, pokemon) in
+    self.pokemonActivityIndicator.startAnimating()
+    
+    ImageHelper.shared.fetchImage(urlString: pokemon.imageUrl) { (appError, image) in
       if let appError = appError {
         print(appError.errorMessage())
-      } else if let pokemon = pokemon {
-        self.pokemon = pokemon
-        dump(pokemon)
+      } else if let image = image {
+        self.pokemonImage.image = image
+        self.pokemonActivityIndicator.stopAnimating()
       }
     }
   }
   
-  
-}
-
-extension PokemonViewController: UICollectionViewDataSource {
-  func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return pokemon.count
-  }
-  
-  func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    guard let cell = pokemonCollectionView.dequeueReusableCell(withReuseIdentifier: "PokemonCell", for: indexPath) as? PokemonViewCell else {return UICollectionViewCell()}
+  override func prepareForReuse() {
     
-    let currentPokemon = pokemon[indexPath.item]
-    
-    cell.setUpImage(pokemon: currentPokemon)
-    
-    return cell
+    pokemonImage.image = nil
     
   }
   
-}
-
-extension PokemonViewController: UICollectionViewDelegate {
-  func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-    return 250
-  }
 }
