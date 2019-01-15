@@ -12,7 +12,6 @@ class PokemonDetailViewController: UIViewController {
   
   var cardDetails: PokemonInfo!
   
-  @IBOutlet weak var pokemonButton: UIButton!
   @IBOutlet weak var pokemonDetailedImage: UIImageView!
   
   @IBOutlet weak var detailedPokemonCollectionView: UICollectionView!
@@ -26,7 +25,6 @@ class PokemonDetailViewController: UIViewController {
     detailedPokemonCollectionView.dataSource = self
     detailedPokemonCollectionView.delegate = self
     setImage(pokemon: cardDetails)
-//        pokemonButton.alpha = 0.6
     let tap = UITapGestureRecognizer(target: self, action: #selector(goBack))
     view.addGestureRecognizer(tap)
   }
@@ -50,11 +48,7 @@ class PokemonDetailViewController: UIViewController {
   }
   
   
-  @IBAction func dismissPokemonButton(_ sender: UIButton) {
-    
-    dismiss(animated: true, completion: nil)
-    
-  }
+
   
 }
 
