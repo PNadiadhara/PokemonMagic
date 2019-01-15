@@ -12,13 +12,10 @@ class MagicDetailedCollectionViewCell: UICollectionViewCell {
     
     
     @IBOutlet weak var magicCardName: UILabel!
-    
-    
     @IBOutlet weak var language: UILabel!
-    
-    
-    
     @IBOutlet weak var magicCardDescription: UITextView!
+    @IBOutlet weak var magicCardImage: UIImageView!
+    
     
     
 }

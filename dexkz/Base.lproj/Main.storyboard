@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="IAE-xs-vCV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="IAE-xs-vCV">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -80,18 +80,20 @@
         <scene sceneID="81K-oa-DMm">
             <objects>
                 <viewController storyboardIdentifier="PokemonDetailed" id="4MZ-oI-Dzu" customClass="PokemonDetailViewController" customModule="dexkz" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="b4X-sB-gQK">
+                    <view key="view" opaque="NO" contentMode="scaleToFill" id="b4X-sB-gQK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pAa-aW-Xty">
-                                <rect key="frame" x="37.666666666666657" y="86.333333333333314" width="300" height="649.33333333333348"/>
+
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pAa-aW-Xty">
+                                <rect key="frame" x="56.333333333333343" y="117.33333333333331" width="262.33333333333326" height="587.33333333333348"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="g5W-Xb-Jp9">
-                                        <rect key="frame" x="30" y="32.333333333333343" width="240" height="324.66666666666663"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g5W-Xb-Jp9">
+                                        <rect key="frame" x="26.333333333333343" y="0.0" width="210" height="352.33333333333331"/>
                                     </imageView>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="RZR-Hj-7mg">
-                                        <rect key="frame" x="45" y="389.66666666666669" width="210" height="195.00000000000006"/>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="RZR-Hj-7mg">
+                                        <rect key="frame" x="25.999999999999986" y="360.33333333333337" width="210.33333333333331" height="201"/>
+
                                         <color key="backgroundColor" red="0.99607843137254903" green="0.94509803921568625" blue="0.34509803921568627" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="nUR-aj-Hx2">
                                             <size key="itemSize" width="204" height="185"/>
@@ -139,8 +141,10 @@
                                             </collectionViewCell>
                                         </cells>
                                     </collectionView>
-                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="YFE-2z-4md">
-                                        <rect key="frame" x="140" y="184.66666666666669" width="20" height="20"/>
+
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="YFE-2z-4md">
+                                        <rect key="frame" x="121.33333333333331" y="166.33333333333337" width="20" height="20"/>
+
                                     </activityIndicatorView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -158,13 +162,9 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="0.35702054794520549" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="pAa-aW-Xty" firstAttribute="width" secondItem="b4X-sB-gQK" secondAttribute="width" multiplier="0.8" id="Iww-XO-YOd"/>
-                            <constraint firstItem="pAa-aW-Xty" firstAttribute="centerX" secondItem="jqh-7z-wRP" secondAttribute="centerX" id="JdQ-rV-I5G"/>
-                            <constraint firstItem="pAa-aW-Xty" firstAttribute="centerY" secondItem="jqh-7z-wRP" secondAttribute="centerY" id="Npg-mr-SED"/>
-                            <constraint firstItem="pAa-aW-Xty" firstAttribute="height" secondItem="b4X-sB-gQK" secondAttribute="height" multiplier="0.8" id="sdD-P5-bqJ"/>
-                        </constraints>
+
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+
                         <viewLayoutGuide key="safeArea" id="jqh-7z-wRP"/>
                     </view>
                     <connections>
@@ -207,6 +207,7 @@
                                                 </imageView>
                                                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="KkS-iQ-bvC">
                                                     <rect key="frame" x="68" y="57.666666666666657" width="20" height="20"/>
+                                                    <color key="color" red="0.1215686277" green="0.1294117719" blue="0.1411764771" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </activityIndicatorView>
                                             </subviews>
                                         </view>
@@ -251,7 +252,7 @@
         <!--Magic Detail View Controller-->
         <scene sceneID="DdN-Bn-zTf">
             <objects>
-                <viewController id="5mJ-HF-faT" customClass="MagicDetailViewController" customModule="dexkz" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MagicDetailPopUp" id="5mJ-HF-faT" customClass="MagicDetailViewController" customModule="dexkz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mca-4W-Y7a">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -259,11 +260,14 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w2Z-ho-T1a">
                                 <rect key="frame" x="0.0" y="44" width="375" height="734"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="magicButton:" destination="5mJ-HF-faT" eventType="touchUpInside" id="oXs-B8-BvV"/>
+                                </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="9B8-ae-d2Y">
                                 <rect key="frame" x="37.666666666666657" y="117.33333333333331" width="300" height="587.33333333333348"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Jvf-xW-8h5">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Jvf-xW-8h5">
                                     <size key="itemSize" width="246" height="416"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -271,7 +275,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MagicDetailedCell" id="FL8-Fc-kcu" customClass="MagicDetailedCollectionViewCell" customModule="dexkz" customModuleProvider="target">
-                                        <rect key="frame" x="27" y="0.0" width="246" height="416"/>
+                                        <rect key="frame" x="0.0" y="85.666666666666671" width="246" height="416"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="246" height="416"/>
@@ -321,6 +325,7 @@
                                         <connections>
                                             <outlet property="language" destination="W1h-3n-KYc" id="m5M-X9-TWA"/>
                                             <outlet property="magicCardDescription" destination="bYF-jP-fVC" id="c1T-zS-bla"/>
+                                            <outlet property="magicCardImage" destination="qbH-TY-Ezg" id="sU1-2U-JoX"/>
                                             <outlet property="magicCardName" destination="MU8-Do-TDT" id="TcP-3Q-2vm"/>
                                         </connections>
                                     </collectionViewCell>
