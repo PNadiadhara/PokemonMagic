@@ -15,13 +15,13 @@ struct Magic : Codable {
 }
 
 struct CardInfo: Codable {
-    let foreignNames : [notEnglish]
-    let imageUrl : String
+    let foreignNames : [NotEnglish]
+    let imageUrl : String?
     let name : String
     let text : String 
 }
 
-struct notEnglish : Codable {
+struct NotEnglish : Codable {
     let name : String
     let text : String
     let imageUrl : String

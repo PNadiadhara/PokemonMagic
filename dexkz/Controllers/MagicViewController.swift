@@ -15,11 +15,15 @@ class MagicViewController: UIViewController {
         didSet{
             DispatchQueue.main.async {
                 self.magicCollection.reloadData()
+                print(dump(self.magicCardInfo))
             }
         }
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUpMagicCards()
+        magicCollection.dataSource = self
+        magicCollection.delegate = self 
        
     }
     
@@ -30,6 +34,7 @@ class MagicViewController: UIViewController {
             }
             if let data = data {
                 self.magicCardInfo = data
+                
             }
         }
     }
@@ -38,28 +43,40 @@ class MagicViewController: UIViewController {
 
 extension MagicViewController : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return magicCardInfo.count
+        print(magicCardInfo.count)
+        return magicCardInfo.filter{$0.imageUrl != nil}.count
+        
         
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = magicCollection.dequeueReusableCell(withReuseIdentifier: "MagicSceneCell", for: indexPath) as? MagicViewCell else { fatalError("magic cell not found")}
-        guard let url = URL.init(string: magicCardInfo.in)
+        let currentMagicCard = magicCardInfo[indexPath.item]
+        print(currentMagicCard.name)
+        cell.setMagicCardCell(magicCard: currentMagicCard)
         return cell
     }
     
     
+    
 }
 
-func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    guard let cell = dogCollection.dequeueReusableCell(withReuseIdentifier: "DogCell", for: indexPath) as? DogCell else { fatalError("dogCell not found") }
-    guard let url = URL.init(string: myImages[indexPath.row]) else { return UICollectionViewCell() }
-    URLSession.shared.dataTask(with: url) { (data, response, error) in
-        if let data = data {
-            DispatchQueue.main.async {
-                cell.dogImage.image = UIImage.init(data: data)
-            }
-        }
-        }.resume()
-    return cell
+extension MagicViewController : UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let magicStoryBoard = UIStoryboard.init(name: "Main", bundle: nil)
+        guard let magicPopUp = magicStoryBoard.instantiateViewController(withIdentifier: "MagicDetailPopUp") as? MagicDetailViewController else { return }
+        
+        magicPopUp.modalPresentationStyle = .overCurrentContext
+        magicPopUp.passedMagicCardInfo = magicCardInfo[indexPath.item]
+        present(magicPopUp, animated: true, completion: nil)
+    }
+}
+
+extension MagicViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        return CGSize.init(width: (magicCollection.bounds.width - 20) / 3, height: magicCollection.bounds.height / 4)
+        
+    }
 }
