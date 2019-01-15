@@ -41,7 +41,7 @@ class MagicViewController: UIViewController {
 
 }
 
-<<<<<<< HEAD
+
 extension MagicViewController : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         print(magicCardInfo.count)
@@ -81,6 +81,4 @@ extension MagicViewController: UICollectionViewDelegateFlowLayout {
         
     }
 }
-=======
 
->>>>>>> 4ff5e634160b9372b9b410a1aa3716b0afa17a6d
