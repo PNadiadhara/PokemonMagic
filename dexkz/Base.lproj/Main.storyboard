@@ -232,12 +232,10 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="156" height="135"/>
                                                 </imageView>
                                                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="KkS-iQ-bvC">
-<<<<<<< HEAD
+
                                                     <rect key="frame" x="68" y="57.5" width="20" height="20"/>
                                                     <color key="color" red="0.1215686277" green="0.1294117719" blue="0.1411764771" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-=======
                                                     <rect key="frame" x="68" y="57.666666666666657" width="20" height="20"/>
->>>>>>> 4ff5e634160b9372b9b410a1aa3716b0afa17a6d
                                                 </activityIndicatorView>
                                             </subviews>
                                         </view>
