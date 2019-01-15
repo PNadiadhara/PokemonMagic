@@ -15,7 +15,6 @@ class MagicViewController: UIViewController {
         didSet{
             DispatchQueue.main.async {
                 self.magicCollection.reloadData()
-                print(dump(self.magicCardInfo))
             }
         }
     }
@@ -44,7 +43,6 @@ class MagicViewController: UIViewController {
 
 extension MagicViewController : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print(magicCardInfo.count)
         return magicCardInfo.filter{$0.imageUrl != nil}.count
         
         
@@ -53,7 +51,6 @@ extension MagicViewController : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = magicCollection.dequeueReusableCell(withReuseIdentifier: "MagicSceneCell", for: indexPath) as? MagicViewCell else { fatalError("magic cell not found")}
         let currentMagicCard = magicCardInfo[indexPath.item]
-        print(currentMagicCard.name)
         cell.setMagicCardCell(magicCard: currentMagicCard)
         return cell
     }
